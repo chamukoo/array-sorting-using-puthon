@@ -1,6 +1,9 @@
-num = [70, 83, 10, 38, 56,	49,	16,	32,	45,	63]
+num = [70, 83, 10, 38, 56, 49, 16, 32, 45, 63]
+
+print(num)
 
 # Quick Sort
+
 def quickSort(num, left, right):
     if left < right:
         partition_pos = partition(num, left, right)
@@ -19,7 +22,7 @@ def partition(num, left, right):
         
         while j > left and num[j] >= pivot:
             j -= 1
-
+        
         if i < j:
             num[i], num[j] = num[j], num[i]
 
