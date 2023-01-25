@@ -1,47 +1,42 @@
 num = [70, 83, 10, 38, 56,	49,	16,	32,	45,	63]
 
-def mergeSort(num, left, right):
-    if left >= right:
-        return
-    
-    mid = (left + right) // 2
-
-    mergeSort(num, left, mid)
-    mergeSort(num, mid + 1, right)
-
-    merge(num, left, right, mid)
-
-
-def merge(num, left, right, mid):
-    left_cpy = num[left:mid + 1]
-    right_cpy = num[mid + 1:right + 1]
-
-    l_counter = 0
-    r_counter = 0
-    sorted_counter = left
-
-    while l_counter < len(left_cpy) and r_counter < len(right_cpy):
-        if left_cpy[l_counter] <= right_cpy[r_counter]:
-            num[sorted_counter] = left_cpy[l_counter]
-            l_counter += 1
-
-        else:
-            num[sorted_counter] = right_cpy[r_counter]
-            r_counter += 1
-
-        sorted_counter += 1
-
-    while l_counter < len(left_cpy):
-        num[sorted_counter] = left_cpy[l_counter]
-        l_counter += 1
-        sorted_counter += 1
-
-    while r_counter < len(right_cpy):
-        num[sorted_counter] = right_cpy[r_counter]
-        r_counter += 1
-        sorted_counter += 1
-
 print(num)
+print("\n\n\n" + ("="*56) + "\n\n\t\t  ⭐  MERGE SORT  ⭐\n\n" + ("="*56))
 
-mergeSort(num, 0, len(num) - 1)
-print(num)
+# Merge Sort
+def mergeSort(num):
+    if len(num) > 1:
+        left = num[:len(num)//2]
+        right = num[len(num)//2:]
+
+        # Recursion
+        mergeSort(left)
+        mergeSort(right)
+
+        # Merge
+        i = 0 # left index
+        j = 0 # right index
+        k = 0 # merge array index
+
+        while i < len(left) and j < len(right):
+            if left[i] <  right[j]:
+                num[k] = left[i]
+                i += 1
+            else:
+                num[k] = right[j]
+                j += 1
+            k += 1
+
+        while i < len(left):
+            num[k] = left[i]
+            i += 1
+            k += 1
+
+        while j < len(right):
+            num[k] = right[j]
+            j += 1
+            k += 1
+
+        print("\n", "\t", num, "\n\n", ("-")*56, "\n\n")
+
+mergeSort(num)

@@ -11,6 +11,6 @@ def insertionSort(num):
             num[j - 1], num[j] = num[j], num[j - 1]
             j -= 1
 
-            print("\n", "\t", num, "\n\n", ("-")*56)
+            print("\n", "\t", num, "\n\n", ("-")*56, "\n\n")
 
 insertionSort(num)

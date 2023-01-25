@@ -12,6 +12,6 @@ def bubbleSort(num):
                 num[j] = num[j + 1]
                 num[j + 1] = temp
 
-                print("\n", "\t", num, "\n\n", ("-")*56)
+                print("\n", "\t", num, "\n\n", ("-")*56, "\n\n")
 
 bubbleSort(num)

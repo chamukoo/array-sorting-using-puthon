@@ -16,7 +16,7 @@ def selectionSort(num):
         num[i] = num[minpos]
         num[minpos] = temp
 
-        print("\n", "\t", num, "\n\n", ("-")*56)
+        print("\n", "\t", num, "\n\n", ("-")*56, "\n\n")
 
 
 selectionSort(num)
