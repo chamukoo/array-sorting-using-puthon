@@ -37,6 +37,6 @@ def mergeSort(num):
             j += 1
             k += 1
 
-        print("\n", "\t", num, "\n\n", ("-")*56, "\n\n")
+        print("\n", "\t", num, "\n\n", ("-")*56, "\n")
 
 mergeSort(num)
